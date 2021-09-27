@@ -47,7 +47,6 @@ function Chat() {
       </Header>
       <ChatMessages>
         {roomMessages?.docs.map((doc) => {
-          console.log("hello");
           const { message, timestamp, user, userImage } = doc.data();
 
           return (
@@ -60,14 +59,11 @@ function Chat() {
             />
           );
         })}
+        <div ref={chatRef}></div>
         <ChatBottom />
       </ChatMessages>
 
-      <ChatInput
-        chatRef={chatRef}
-        channelName={roomDetails?.data().name}
-        channelId={roomId}
-      />
+      <ChatInput channelName={roomDetails?.data().name} channelId={roomId} />
     </ChatContainer>
   );
 }
@@ -83,7 +79,7 @@ const Header = styled.div`
 const HeaderRight = styled.div``;
 const HeaderLeft = styled.div`
   display: flex;
-  align-item: center;
+  align-items: center;
   > h4 {
     display: flex;
     text-transform: lowercase;
