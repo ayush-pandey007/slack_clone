@@ -59,7 +59,6 @@ function Chat() {
             />
           );
         })}
-        <div ref={chatRef}></div>
         <ChatBottom />
       </ChatMessages>
 
