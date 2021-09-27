@@ -59,10 +59,15 @@ function Chat() {
             />
           );
         })}
+
         <ChatBottom />
       </ChatMessages>
 
-      <ChatInput channelName={roomDetails?.data().name} channelId={roomId} />
+      <ChatInput
+        ref={chatRef}
+        channelName={roomDetails?.data().name}
+        channelId={roomId}
+      />
     </ChatContainer>
   );
 }
